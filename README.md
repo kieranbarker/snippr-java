@@ -51,3 +51,17 @@ We throw a `SnippetNotFoundException` when a snippet cannot be found.
 ### SnippetNotFoundAdvice (Class)
 
 The `SnippetNotFoundAdvice` class kicks in when we throw a `SnippetNotFoundException`. It tells Spring to send the error as the body of a [404 Not Found](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/404) response.
+
+### Encryptor (Class)
+
+The `Encryptor` class uses the [Spring Security Crypto Module](https://docs.spring.io/spring-security/reference/features/integrations/cryptography.html) to handle encryption and decryption.
+
+## Accessing the database
+
+To access the in-memory database, open the [H2 Console](http://localhost:8080/h2-console) and use the following credentials. These are defined in the `application.properties` file. 
+
+- **JDBC URL:** jdbc:h2:mem:testdb
+- **Username:** sa
+- **Password:** password
+
+Once logged in, you can run an SQL query like `SELECT * FROM snippets;` to see what's in the database.

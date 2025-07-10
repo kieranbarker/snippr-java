@@ -1,16 +1,16 @@
 package codes.barker.snippr;
 
+import jakarta.persistence.*;
+
 import java.util.Objects;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-
 @Entity
+@Table(name = "snippets")
 class Snippet {
-
     private @Id @GeneratedValue Long id;
     private String language;
+
+    @Column(length = Integer.MAX_VALUE)
     private String code;
 
     Snippet() {}
